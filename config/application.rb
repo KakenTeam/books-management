@@ -7,7 +7,7 @@ require 'fog/aws'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
+# Dotenv::Railtie.load
 
 module CapstoneProject
   class Application < Rails::Application
