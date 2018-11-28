@@ -14,3 +14,15 @@ vi:
   action:
     action: Hành động
     request: Yêu cầu 
+  helpers:
+    label:
+      book:
+        title: Tên sách
+        author: Tác giả 
+        publisher: Nhà xuất bản 
+        quantity: Số lượng
+        year: Năm 
+        cover: Ảnh bìa 
+    submit:
+      create: "Tạo"
+      update: "Cập nhật"
