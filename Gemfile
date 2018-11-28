@@ -30,6 +30,7 @@ gem 'fog-aws', '~> 3.3'
 group :development, :test do
   gem 'byebug',  '9.0.0', platform: :mri
   gem "rails-erd", '1.5.0'
+  gem 'dotenv-rails', '~> 2.5'
 end
 
 group :development do
