@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+book :
+  title: book 1
+  publisher: MyString
+  author: Thuan
+  year: 1
+  availability: 10
+  quantity: 10
+
+book2:
+  title: book 2
+  publisher: MyString
+  author: Thuan
+  year: 1
+  availability: 10
+  quantity: 10
+
+book_not_available:
+  title: Beasts 
+  publisher: publisher
+  author: Thuan
+  year: 1
+  availability: 0
+  quantity: 10

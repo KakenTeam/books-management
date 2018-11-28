@@ -1,0 +1,29 @@
+<h3>All books are being borrowed</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Due date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr class="<%= 'danger' if book.has_expired?(current_user) %>">
+        <td><%= link_to book.title, book %></td>
+        <td><%= book.author %></td>
+        <td><%= book.get_due_time(current_user) %></td>
+        <% if book.has_expired?(current_user) %>
+          <td>
+            <% if !book.get_borrowing(current_user).request.nil? %>
+              Waiting approving from librarian
+            <% else %>
+              <%= render 'shared/extend', object: book.get_borrowing(current_user) %>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
