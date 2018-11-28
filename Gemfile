@@ -26,6 +26,7 @@ gem 'figaro'
 gem 'materialize-sass'
 gem 'pg', '0.18.4'
 gem 'fog-aws', '~> 3.3'
+gem 'friendly_id', '~> 5.2.4'
 
 group :development, :test do
   gem 'byebug',  '9.0.0', platform: :mri

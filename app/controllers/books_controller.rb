@@ -51,7 +51,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    
+    @book.destroy 
   end
 
   private 
@@ -60,7 +60,7 @@ class BooksController < ApplicationController
     end
 
     def get_book
-      @book = Book.find(params[:id])
+      @book = Book.friendly.find(params[:id])
     end
 
     def admin_user
