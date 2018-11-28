@@ -1,5 +1,5 @@
 <% provide(:title, @book.title) %>
-<h1>Book Detail</h1>
+<h1><%= t('page.book.detail')%></h1>
 <div class="book-detail">
   <div class="bk-image" >
     <%= image_tag @book.cover.url if @book.cover? %>

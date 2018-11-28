@@ -1,7 +1,7 @@
 <% provide(:title, "All books") %>
 
 <div class="grid-shuffle padding-lr-60 padding-top-30">
-  <h1>All books</h1>
+  <h1><%= t('page.book.all')%></h1>
   <%= link_to 'Add book', new_book_path, class: 'btn btn-success' %>
   <ul class="row" id="grid">
 
