@@ -8,6 +8,8 @@ class Book < ApplicationRecord
   validates  :quantity, presence: true, numericality: { greater_than: 0 }
   validates  :author,   presence: true
   mount_uploader :cover, CoverUploader
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
   def self.search(search)
     if search 

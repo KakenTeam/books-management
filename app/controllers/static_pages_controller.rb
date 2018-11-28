@@ -3,14 +3,12 @@ class StaticPagesController < ApplicationController
   before_action :admin_user, only: [:return]
 
   def home
-    if @user = current_user
-      unless @user.admin?
-        @borrowings = @user.borrowings.where("verified LIKE ?", true)
-        @books = Array.new
-        @borrowings.each { |b| @books << Book.find_by(id: b.book_id) }
-      else
-        @borrowings = Borrowing.where.not(request: nil)
-      end
+    unless current_user_admin?
+      @borrowings = current_user.borrowings.where(verified: true)
+      @books = Array.new
+      @borrowings.each { |b| @books << Book.find_by(id: b.book_id) }
+    else
+      @borrowings = Borrowing.where.not(request: nil)
     end
   end
 
