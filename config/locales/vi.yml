@@ -1,0 +1,16 @@
+vi:
+  hello: "Xin chao"
+  static_page:
+    title_librian: Các yêu cầu mượn sách 
+  book: 
+    title: Tên sách 
+    author: Tác giả 
+    publisher: Nhà xuất bản 
+    availability: Sẵn có 
+    year: Năm 
+    due_date: Ngày hết hạn 
+  user:
+    user: User
+  action:
+    action: Hành động
+    request: Yêu cầu 
