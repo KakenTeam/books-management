@@ -11,7 +11,7 @@
         <div class="bk-wrapper">
           <div class="bk-book bk-bookdefault">
             <div class="bk-front">
-              <%= image_tag(book.cover.url, class:"bk-cover") if book.cover? %>
+              <%= image_tag(book.cover.url, class:"bk-cover", alt: "Not found photo") if book.cover? %>
               <%= image_tag(book.cover.default_url, class: "bk-cover") unless book.cover? %>
             </div>
           </div>
@@ -22,9 +22,9 @@
         <p class="author">by <%= book.author %> &bull; <%= book.year %></p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tellus nisi, eget pulvinar in, molestie et arcu.</p>
         <%= link_to "Detail", book, class: 'btn btn-primary' %>
-        <% if current_user_admin? %> 
+        <% if current_user_admin? %>
           <%= link_to "Edit", edit_book_path(book), class: 'btn btn-primary' %>
-           <%= link_to "Delete", book, method: :delete, 
+           <%= link_to "Delete", book, method: :delete,
                                   data: { confirm: "You sure?" },
                                   class: 'btn btn-danger' %>
         <% end %>
@@ -34,6 +34,6 @@
   <% end %>
   </ul>
 </div>
-         
+
 <%= will_paginate %>
 
