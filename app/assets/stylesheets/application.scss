@@ -7,6 +7,7 @@
 @import "color";
 @import 'custom';
 @import 'books';
+@import 'users';
 
 input {
   outline: none;
@@ -20,7 +21,7 @@ input[type=search] {
 }
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
-  display: none; 
+  display: none;
 }
 
 
@@ -29,11 +30,11 @@ input[type=search] {
   border: solid 1px #ccc;
   padding: 9px 10px 9px 32px;
   width: 88px;
-  
+
   -webkit-border-radius: 2em;
   -moz-border-radius: 2em;
   border-radius: 2em;
-  
+
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   transition: all .5s;
@@ -42,7 +43,7 @@ input[type=search]:focus {
   width: 180px;
   background-color: #fff;
   border-color: #66CC75;
-  
+
   -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
   -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
   box-shadow: 0 0 5px rgba(109,207,246,.5);
