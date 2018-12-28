@@ -39,7 +39,7 @@
   </thead>
   <tbody>
     <% @borrowings.each do |e| %>
-      <tr>
+      <tr class="<%= 'danger' if e.expired? %>">
         <td><%= link_to e.book.title, e.book %></td>
         <td><%= e.book.author %></td>
         <td><%= User.find_by(id: e.user_id).name %></td>
