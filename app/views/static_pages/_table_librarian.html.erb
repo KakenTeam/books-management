@@ -13,7 +13,7 @@
   <tbody>
     <% @request_borrowings.each do |e| %>
       <tr>
-        <td><%= link_to book.title, book %></td>
+        <td><%= link_to e.book.title, e.book %></td>
         <td><%= Book.find_by(id: e.book_id).author %></td>
         <td><%= User.find_by(id: e.user_id).name %></td>
         <td><%= e.due_date %></td>
