@@ -11,9 +11,9 @@
     </tr>
   </thead>
   <tbody>
-    <% @borrowings.each do |e| %>
+    <% @request_borrowings.each do |e| %>
       <tr>
-        <td><%= Book.find_by(id: e.book_id).title %></td>
+        <td><%= link_to book.title, book %></td>
         <td><%= Book.find_by(id: e.book_id).author %></td>
         <td><%= User.find_by(id: e.user_id).name %></td>
         <td><%= e.due_date %></td>
@@ -24,3 +24,27 @@
     <% end %>
   </tbody>
 </table>    
+
+<hr>
+
+<h3>Danh sách sách đang mượn</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%=t('book.title') %></th>
+      <th><%=t('book.author') %></th>
+      <th><%=t('user.user') %></th>
+      <th><%=t('book.due_date') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @borrowings.each do |e| %>
+      <tr>
+        <td><%= link_to e.book.title, e.book %></td>
+        <td><%= e.book.author %></td>
+        <td><%= User.find_by(id: e.user_id).name %></td>
+        <td><%= e.due_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>   

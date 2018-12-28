@@ -2,6 +2,6 @@
   <%= hidden_field_tag :request_extend, true %>
   <%= hidden_field_tag :user_id, object.user_id %>
   <%= hidden_field_tag :book_id, object.book_id %>
-  <input type="number" name="extension_day">
-  <%= f.submit "Extend", class: "btn btn-primary extend-btn" %>
+  <input type="number" name="extension_day" class="form-control">
+  <%= f.submit "Gia hạn", class: "btn btn-primary extend-btn" %>
 <% end %>

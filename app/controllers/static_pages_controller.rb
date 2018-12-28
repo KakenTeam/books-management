@@ -9,7 +9,8 @@ class StaticPagesController < ApplicationController
         @books = Array.new
         @borrowings.each { |b| @books << Book.find_by(id: b.book_id) }
       else
-        @borrowings = Borrowing.where.not(request: nil)
+        @request_borrowings = Borrowing.where.not(request: nil)
+        @borrowings = Borrowing.where(request: nil).includes(:book)
       end
     end
   end

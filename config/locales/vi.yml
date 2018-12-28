@@ -1,7 +1,7 @@
 vi:
   hello: "Xin chao"
   static_page:
-    title_librian: Các yêu cầu mượn sách 
+    title_librian: Các yêu cầu mượn sách và gia hạn
   page:
     book: 
       all: Danh sách 
