@@ -38,7 +38,7 @@
 
 <div>
   <% if @book.borrowings.count == 0 %>
-    <h4>No one has borrowed this book.</h4>
+    <h4>Chưa ai mượn cuốn sách này</h4>
   <% else %>
   <h3>People are borrowing this book</h3>
     <table class="table table-hover">
@@ -49,9 +49,9 @@
         </tr>
       </thead>
       <tbody>
-        <% @book.borrowings.each do |f| %>
+        <% @book.borrowings.includes(:user).each do |f| %>
           <tr class="<%= 'danger' if @book.has_expired?(User.find(f.user_id)) %>">
-            <td><%= link_to User.find(f.user_id).name %></td>
+            <td><%= link_to f.user.name, f.user %></td>
             <td><%= f.due_date.strftime("%b %e %Y") %></td>
           </tr>
         <% end %>
